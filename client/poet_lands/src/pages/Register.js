@@ -5,8 +5,8 @@ import {useState} from "react";
 export default function Register() {
     const [username, setUsername] = useState(' ');
     const [password, setPassword] = useState(' ');
-    function register(ev) {
-        ev.preventDefault();
+    async function register(ev) {
+        ev.preventDefault(); 
         await fetch('http://localhost:4000/register', {
             method: 'POST',
             body: JSON.stringify({username,passowrd}),
