@@ -31,6 +31,21 @@ header nav {
   gap: 15px;
 }
 
-div.post {
-  
+div.poem p.info {
+  margin: 6px 0;
+  color: #888;
+  font-size: 0.7rem;
+  font-weight: bold;
+
 }
+
+div.poem p.info a.author {
+  color: #333;
+
+}
+
+div.post p.summary {
+  margin: 10px 0;
+  line-height: 1.4 rem;
+}
+

@@ -10,26 +10,33 @@ function App() {
           <a href="">Login</a>
           <a href="">Register</a>
         </nav>
-
       </header>
-      <div className = "entry">
+      <div className = "poem">
         <img src=""></img>
         <h2> Poet title </h2>
         <p className="info">
           <a className= "author"> Tahmidur Rabb</a>
           <time> 2023-09-05 08:50</time>
         </p>
-        <p> This is the poem</p>
+        <p className= "summary"> This is the poem</p>
       </div>
-      <div className = "entry">
+      <div className = "poem">
         <img src=""></img>
         <h2> Poet title </h2>
-        <p> This is the poem</p>
+        <p className="info">
+          <a className= "author"> Tahmidur Rabb</a>
+          <time> 2023-09-05 08:50</time>
+        </p>
+        <p className= "summary"> This is the poem</p>
       </div>
-      <div className = "entry">
+      <div className = "poem">
         <img src=""></img>
         <h2> Poet title </h2>
-        <p> This is the poem</p>
+        <p className="info">
+          <a className= "author"> Tahmidur Rabb</a>
+          <time> 2023-09-05 08:50</time>
+        </p>
+        <p className= "summary"> This is the poem</p>
       </div>
     </main>
   );
