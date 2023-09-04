@@ -2,26 +2,19 @@ import './App.css';
 import Poem from "./Poem";
 import Header from "./Header";
 import {Route, Routes} from "react-router-dom";
+import Layout from "./Layout"
+import HomePage from "./pages/HomePage"
+import LoginPage from "./pages/LoginPage"
+import Register from "./pages/Register"
 
 function App() {
   return (
     <Routes>
-      <Route index element= {
-        <main>
-          <Header />
-          <Poem />
-          <Poem />
-          <Poem />
-        </main>
-
-      } />
-      <Route path= {'/login'} element= {
-        <div> Login Page </div>
-      } />
-      <Route path = {'/register'} element = {
-        <div> Register </div> 
-      }
-      />
+      <Route path= "/" element = { <Layout />}>
+        <Route index element= {<HomePage /> } />
+        <Route path= {'/login'} element= {<LoginPage />} />
+        <Route path = {'/register'} element = { <Register />} />
+      </Route> 
     </Routes>
 
   );
