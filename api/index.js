@@ -57,6 +57,11 @@ app.get('/profile', (req,res) => {
 
 app.post('/logout', (req,res)=> {
     res.cookie('token', '').json('ok');
+});
+
+app.post('/poem', (req, res) => {
+    const {title, content} = req.body;
+    res.json(title, content);
 })
 app.listen(4000);
 
