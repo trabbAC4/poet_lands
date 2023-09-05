@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 const User = require('./models/User');
+const Poem = require('./models/Poem');
 const bcrypt = require('bcryptjs');
 const app = express();
 const jwt= require('jsonwebtoken');
@@ -59,10 +60,14 @@ app.post('/logout', (req,res)=> {
     res.cookie('token', '').json('ok');
 });
 
-app.post('/poem', (req, res) => {
+app.post('/poem', async(req, res) => {
     const {title, content} = req.body;
-    res.json(title, content);
-})
+    const poemDoc = await Poem.create({
+        title,
+        content,
+    });
+    res.json(poemDoc);
+});
 app.listen(4000);
 
 //y2CI8pkYB3ziK4cb
