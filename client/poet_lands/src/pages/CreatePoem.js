@@ -1,5 +1,5 @@
 import ReactQuill from "react-quill";
-import 'react-quill/dist/quill.snow.css'
+import 'react-quill/dist/quill.snow.css';
 import {useState} from "react";
 
 
@@ -28,12 +28,14 @@ export default function CreatePoem() {
         data.set('title', title)
         data.set('content', content);
         ev.preventDefault();
-        const response = await fetch('http://localhost:4000/poem', {
-            method: 'POST',
-            body: data,
+        // const response = await fetch('http://localhost:4000/poem', {
+        //     method: 'POST',
+        //     body: data,
 
-        });
-        console.log(await response.json());
+        // });
+        // console.log(await response.json());
+        console.log(title);
+        console.log(content);
     }
 
     return( 

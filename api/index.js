@@ -62,11 +62,7 @@ app.post('/logout', (req,res)=> {
 
 app.post('/poem', async(req, res) => {
     const {title, content} = req.body;
-    const poemDoc = await Poem.create({
-        title,
-        content,
-    });
-    res.json(poemDoc);
+    res.json(title);
 });
 app.listen(4000);
 

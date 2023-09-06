@@ -4,6 +4,7 @@ const {Schema, model} = mongoose;
 const PoemSchema = new Schema({
     title:String,
     content:String
+    
 }, {
     timestamps: true,
 });
