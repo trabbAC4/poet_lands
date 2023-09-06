@@ -21,21 +21,19 @@ const formats = [
 
 export default function CreatePoem() {
     const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
+    const [content, setContent] = useState(''); 
 
     async function createNewPoem(ev) {
         const data = new FormData();
         data.set('title', title)
         data.set('content', content);
         ev.preventDefault();
-        // const response = await fetch('http://localhost:4000/poem', {
-        //     method: 'POST',
-        //     body: data,
+        const response = await fetch('http://localhost:4000/poem', {
+            method: 'POST',
+            body: data,
 
-        // });
-        // console.log(await response.json());
-        console.log(title);
-        console.log(content);
+        });
+        console.log(await response.json()); 
     }
 
     return( 
