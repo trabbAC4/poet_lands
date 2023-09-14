@@ -33,6 +33,7 @@ export default function CreatePoem() {
         const response = await fetch('http://localhost:4000/poem', {
             method: 'POST',
             body: data,
+            credentials: 'include',
 
         });
         if (response.ok) {

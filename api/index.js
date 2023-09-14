@@ -64,12 +64,25 @@ app.post('/logout', (req,res)=> {
 
 
 app.post('/poem', async(req, res) => {
-    const {title, content} = req.body;
+    const {token} = req.cookies;
+    jwt.verify(token, jwt_secret, {}, async(err, info) => {
+        if (err) throw err;
+        const {title, content} = req.body;
+        const poemDoc = await Poem.create({
+            title,
+            summary,
+            content,
+            cover: newPath,
+            author: info.id,
+        });
+        res.json(poemDoc);
+    });
+
     res.json({title, content});       
 });
 
 app.get('/poem', async(req,res) => {
-    res.json(await Poem.find());
+    res.json(await Poem.find().populate('author'), ['username']);
 });
 
 app.listen(4000);

@@ -3,7 +3,8 @@ const {Schema, model} = mongoose;
 
 const PoemSchema = new Schema({
     title:String,
-    content:String
+    content:String,
+    author: {type:Schema.Types.ObjectId, ref:'User'},
     
 }, {
     timestamps: true,
