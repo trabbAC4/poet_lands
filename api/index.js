@@ -7,10 +7,12 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const jwt= require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 const jwt_secret= 'asdiibasdb12312'
 const salt= bcrypt.genSaltSync(10);
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
@@ -58,18 +60,18 @@ app.get('/profile', (req,res) => {
 
 app.post('/logout', (req,res)=> {
     res.cookie('token', '').json('ok');
-});
+})
+
 
 app.post('/poem', async(req, res) => {
     const {title, content} = req.body;
-
-    const poemDoc = await Poem.create({
-        title,
-        content,
-    });
-    res.json(poemDoc);
-    
+    res.json({title, content});       
 });
+
+app.get('/poem', async(req,res) => {
+    res.json(await Poem.find());
+});
+
 app.listen(4000);
 
 //y2CI8pkYB3ziK4cb
