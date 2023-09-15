@@ -22,7 +22,7 @@ export default function Register() {
     return (
         <div>
             <form className="Register" onSubmit={register}>
-                <h1> Register </h1> 
+                <h1> Register to use our platform</h1> 
                 <input type= "text" 
                     placeholder= "username"
                     value = {username}

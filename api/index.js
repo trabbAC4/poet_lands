@@ -81,14 +81,6 @@ app.post('/poem', async(req, res) => {
     res.json({title, content});       
 });
 
-app.get('/poem', async(req,res) => {
-    res.json(
-        await Poem.find().populate('author'), ['username']
-        .sort({createdAt: -1})
-        .limit(20)
-    );
-});
-
 app.listen(4000);
 
 //y2CI8pkYB3ziK4cb
