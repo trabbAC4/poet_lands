@@ -45,8 +45,8 @@ export default function CreatePoem() {
     }
 
     return( 
-        <div>
-            Create a new Poem 
+        <div className="poem_form"> 
+            <div id = "Title"> Create a new poem </div>
             <form onSubmit = {createNewPoem}>
                 <input type= "title" 
                     placeholder= {"Title"} 

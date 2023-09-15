@@ -70,9 +70,7 @@ app.post('/poem', async(req, res) => {
         const {title, content} = req.body;
         const poemDoc = await Poem.create({
             title,
-            summary,
             content,
-            cover: newPath,
             author: info.id,
         });
         res.json(poemDoc);

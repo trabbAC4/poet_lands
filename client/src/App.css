@@ -11,10 +11,13 @@ main{
   margin: 0 auto;
 }
 
+.poem_form{
+  padding-bottom: 15px;
+}
 #Title {
   text-align: center;
   font-size: 1.5rem;
-  color: white;
+  color: black;
 }
 
 header {

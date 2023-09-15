@@ -12,13 +12,13 @@ import CreatePoem from "./pages/CreatePoem";
 function App() {
   return (
     <UserContextProvider> 
+      <Header />
       <Routes>
-        <Route path= "/" element = {<Layout />}>
-          <Route index element= {<HomePage /> } />
+          <Route path= {"/"} element = {<Layout />}/>
+          <Route index element= {<HomePage /> } /> 
           <Route path= {'/login'} element= {<LoginPage />} />
           <Route path = {'/register'} element = { <Register />} />
-          <Route path = {'/poem'} element = {<CreatePoem />} />
-
+          <Route path = {'/poem'} element = {<CreatePoem />}>
           </Route> 
       </Routes>
     </UserContextProvider>

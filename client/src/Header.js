@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import {useEffect, useState, useContext} from "react";
 import {UserContext} from "./UserContext"
-import MainPage from "./Mainpage"
+
 export default function Header() {
   const {setUserInfo, userInfo} = useContext(UserContext);
 
@@ -35,8 +35,9 @@ export default function Header() {
         <nav>
           {username && (
             <>
+              <Link to= "/"> Welcome {username}! </Link>
               <Link to ="/poem"> Create new poem </Link>
-              <a onClick = {logout}> Logout </a>
+              <Link to ="/"> <a onClick = {logout}> Logout </a> </Link>
             </>
           )}
           {!username && (
@@ -47,7 +48,6 @@ export default function Header() {
           )}
         </nav>
       </header>
-      <MainPage />
     </> 
       
     )
