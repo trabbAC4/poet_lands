@@ -3,11 +3,11 @@ import {useEffect, useState} from "react";
 
 
  export default function HomePage() {
-     const [poems, setpoems] = useState([]);
+     const [poems, setPoems] = useState([]);
      useEffect(() => {
          fetch('http://localhost:4000/poem').then(response => {
              response.json().then(poems => {
-                 console.log(poems);
+                 setPoems(poems);
              });
          });
      }, []);
