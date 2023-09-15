@@ -29,10 +29,12 @@ export default function CreatePoem() {
         data.set('title', title)
         data.set('content', content);
         console.log(data);
+        console.log(title);
+        console.log(content);
         ev.preventDefault();
         const response = await fetch('http://localhost:4000/poem', {
             method: 'POST',
-            body: data,
+            body: title,
             credentials: 'include',
 
         });
@@ -50,10 +52,11 @@ export default function CreatePoem() {
             <form onSubmit = {createNewPoem}>
                 <input type= "title" 
                     placeholder= {"Title"} 
-                    value= {title} onChange = {ev => setTitle(ev.target.value)}/>
+                    value= {title} 
+                    onChange={ev => setTitle(ev.target.value)}/>
                 <ReactQuill 
                     value = {content} 
-                    onChange = {newValue => setContent(newValue)}
+                    onChange={newValue => setContent(newValue)}
                     modules = {modules} 
                     formats = {formats} />
                 <button style= {{marginTop: '5px'}}> Create Poem </button>
