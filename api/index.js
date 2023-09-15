@@ -75,8 +75,8 @@ app.post('/poem', (req,res) => {
     //     });
     //     res.json(poemDoc);
     // });
-    
-    res.json(req.title, req.content);       
+    const {title, content} = req.body;
+    res.json({title, content});       
 });
 
 app.listen(4000);

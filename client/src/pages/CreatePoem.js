@@ -25,16 +25,17 @@ export default function CreatePoem() {
     const [redirect, setRedirect] = useState(false);
 
     async function createNewPoem(ev) {
-        const data = new FormData();
-        data.set('title', title)
-        data.set('content', content);
-        console.log(data);
-        console.log(title);
-        console.log(content);
+        // const data = new FormData();
+        // data.set('title', title)
+        // data.set('content', content);
+        // console.log(data);
+        // console.log(title);
+        // console.log(content);
         ev.preventDefault();
         const response = await fetch('http://localhost:4000/poem', {
             method: 'POST',
-            body: title,
+            body: JSON.stringify({title, content}),
+            headers: {'Content-Type': 'application/json'},
             credentials: 'include',
 
         });
@@ -51,7 +52,7 @@ export default function CreatePoem() {
             <div id = "Title"> Create a new poem </div>
             <form onSubmit = {createNewPoem}>
                 <input type= "title" 
-                    placeholder= {"Title"} 
+                    placeholder= {'Title'} 
                     value= {title} 
                     onChange={ev => setTitle(ev.target.value)}/>
                 <ReactQuill 
