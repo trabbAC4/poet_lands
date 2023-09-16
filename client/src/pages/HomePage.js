@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
      useEffect(() => {
          fetch('http://localhost:4000/poem').then(response => {
              response.json().then(poems => {
+                 console.log(poems);
                  setPoems(poems);
              });
          });
@@ -15,7 +16,7 @@ import {useEffect, useState} from "react";
     return (
         <>
         {poems.length > 0 && poems.map(poem => (
-            <Poem {...poem} />
+            <Poem key=  {poem.id} {...poem} />
         ))}
 
         </>

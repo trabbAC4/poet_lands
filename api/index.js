@@ -71,15 +71,16 @@ app.post('/poem', async(req,res) => {
         const poemDoc = await Poem.create({
             title,
             content,
-            author: info.id,
+            author: info.id, 
         });
         res.json(poemDoc);
     });  
 }); 
 
-app.get('/poem', async (req,res) => {
-    res.json(await Poem.find().populate('author', ['username']));
+app.get('/poem', async(req,res) => {
+    res.json(await Poem.find().populate('author', ['username']))
 })
+
 app.listen(4000);
 
 //y2CI8pkYB3ziK4cb
