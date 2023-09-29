@@ -16,7 +16,7 @@ import {useEffect, useState} from "react";
 
     return (
         <>
-           <h1 id = "homepage_title">  Here are your poems </h1> 
+           <h1 id = "homepage_title">  Here are your poems. Click on the Title to get a larger view! </h1> 
            {poems.map(poem => (
             <Poem  {...poem} />
         ))}

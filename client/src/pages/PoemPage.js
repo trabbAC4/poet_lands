@@ -18,9 +18,12 @@ export default function PoemPage() {
     return (
         <div id = "poem_display"> 
             <h1> {poemInfo.title} </h1>
-            <h1> {poemInfo.author.username} </h1>
-            <div dangerouslySetInnerHTML = {{__html:poemInfo.content}} />
-
+            <h2> By {poemInfo.author.username} </h2>
+            <div id = "pattern">
+                <div id = "content"> 
+                    <div dangerouslySetInnerHTML = {{__html:poemInfo.content}} />
+                </div>
+            </div>
         </div>
 
     );

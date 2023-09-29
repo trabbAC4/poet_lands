@@ -48,10 +48,12 @@ export default function CreatePoem() {
     }
 
     return( 
+        <main id = "home">
+        <h1 id = "Create_Title"> Create a new poem </h1>
         <div className="poem_form"> 
-            <div id = "Title"> Create a new poem </div>
             <form onSubmit = {createNewPoem}>
                 <input type= "title" 
+                    class = "title_input"
                     placeholder= {'Title'} 
                     value= {title} 
                     onChange={ev => setTitle(ev.target.value)}/>
@@ -64,5 +66,6 @@ export default function CreatePoem() {
                 <button style= {{marginTop: '5px'}}> Create Poem </button>
             </form>
         </div>
+        </main>
     );
 }
