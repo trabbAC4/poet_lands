@@ -8,6 +8,9 @@ const app = express();
 const jwt= require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
+
 
 const jwt_secret= 'asdiibasdb12312'
 const salt= bcrypt.genSaltSync(10);
@@ -63,7 +66,7 @@ app.post('/logout', (req,res)=> {
 })
 
 
-app.post('/poem', async(req,res) => {
+app.post('/poem', upload.none(), async(req,res) => {
     const {token} = req.cookies;
     jwt.verify(token, jwt_secret, {}, async(err, info) => {
         if (err) throw err;
@@ -77,7 +80,7 @@ app.post('/poem', async(req,res) => {
     });  
 }); 
 
-app.get('/poem', async(req,res) => {
+app.get('/poem',async(req,res) => {
     res.json(await Poem.find().populate('author', ['username']))
 })
 

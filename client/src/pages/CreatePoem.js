@@ -21,7 +21,7 @@ const formats = [
 
 export default function CreatePoem() {
     const [title, setTitle] = useState('');
-    const [content, setContent] = useState(''); 
+    const [content, setContent] = useState({ops: []}); 
     const [redirect, setRedirect] = useState(false);
 
     async function createNewPoem(ev) {
@@ -59,7 +59,8 @@ export default function CreatePoem() {
                     value = {content} 
                     onChange={newValue => setContent(newValue)}
                     modules = {modules} 
-                    formats = {formats} />
+                    formats = {formats}
+                />
                 <button style= {{marginTop: '5px'}}> Create Poem </button>
             </form>
         </div>
