@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage"
 import Register from "./pages/Register"
 import {UserContextProvider} from "./UserContext";
 import CreatePoem from "./pages/CreatePoem";
+import PoemPage from "./pages/PoemPage";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route index element= {<HomePage /> } /> 
           <Route path= {'/login'} element= {<LoginPage />} />
           <Route path = {'/register'} element = { <Register />} />
-          <Route path = {'/poem'} element = {<CreatePoem />}>
+          <Route path = {'/poem'} element = {<CreatePoem />} />
+          <Route path ='/poem/:id' element = {<PoemPage/>} >
           </Route> 
       </Routes>
     </UserContextProvider>

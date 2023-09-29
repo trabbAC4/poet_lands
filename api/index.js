@@ -84,6 +84,11 @@ app.get('/poem',async(req,res) => {
     res.json(await Poem.find().populate('author', ['username']))
 })
 
+app.get('/poem/:id', async(req, res)=> {
+    const {id} = req.params;
+    const poemDoc = await Poem.findById(id).populate('author', ['username']);
+    res.json(poemDoc);
+})
 app.listen(4000);
 
 //y2CI8pkYB3ziK4cb
