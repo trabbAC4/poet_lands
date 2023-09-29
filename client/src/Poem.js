@@ -2,7 +2,7 @@ import {formatISO9075} from "date-fns";
 import {Link} from "react-router-dom";
 
 
-export default function Poem({_id, title, content, createdAt, author}) {
+export default function Poem({_id, title, createdAt, author}) {
     return(
       <div className="poem">
         <h1> {author.username} </h1>
@@ -10,7 +10,6 @@ export default function Poem({_id, title, content, createdAt, author}) {
         <Link to= {`/poem/${_id}`}> 
         <h1> {title} </h1> 
         </Link> 
-        <h2> {content} </h2>
       </div>
 
     )

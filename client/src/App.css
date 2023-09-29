@@ -59,10 +59,15 @@ div.post p.summary {
   line-height: 1.4 rem;
 }
 
-form.login form.register {
-  max-width: 400px;
-  margin: 0 auto;
 
+/*Login */
+
+#login {
+  text-align: center;
+  font-size: 50px;
+}
+form.Login {
+  max-width: 650px;
 }
 input {
   display: block;
