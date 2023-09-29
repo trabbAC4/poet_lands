@@ -14,32 +14,7 @@ main{
 .poem_form{
   padding-bottom: 15px;
 }
-#Title {
-  text-align: center;
-  font-size: 1.5rem;
-  color: black;
-}
 
-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
-  font-size: 1.5rem;
-
-}
-
-header a{ 
-  text-decoration: none;
-  color: inherit;
-
-}
-header a.logo {
-  font-weight: bold;
-}
-header nav {
-  display: flex;;
-  gap: 35px;
-}
 
 div.poem p.info {
   margin: 6px 0;
@@ -91,4 +66,57 @@ button {
 }
 form.login h1, form.register h1 {
   text-align: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+
+/* Navbar */
+nav, header{
+  color: white;
+  background-color: grey;
+
+}
+header a {
+  text-transform: uppercase;
+  font-weight: 500;
+  
+}
+
+#Title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+
+}
+
+header a{ 
+  text-decoration: none;
+  color: inherit;
+
+}
+header a.logo {
+  font-weight: bold;
+}
+header nav {
+  display: flex;;
+  gap: 35px;
+}
+
+header a:hover{
+  color: black;
+  transition: width 0.5s ease;
+}
+
+
+/* Homepage title */ 
+#homepage_title {
+  text-align:center; 
 }

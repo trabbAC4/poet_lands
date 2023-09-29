@@ -46,6 +46,7 @@ export default function Header() {
             <Link to = "/register"> Register </Link>
             </> 
           )}
+          <div class ="dot"></div>
         </nav>
       </header>
     </> 

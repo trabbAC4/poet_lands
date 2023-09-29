@@ -16,7 +16,7 @@ export default function PoemPage() {
     }, []);
     if (!poemInfo) return '';
     return (
-        <div> 
+        <div id = "poem_display"> 
             <h1> {poemInfo.title} </h1>
             <h1> {poemInfo.author.username} </h1>
             <div dangerouslySetInnerHTML = {{__html:poemInfo.content}} />
