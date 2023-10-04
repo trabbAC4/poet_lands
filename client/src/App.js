@@ -10,6 +10,7 @@ import {UserContextProvider} from "./UserContext";
 import CreatePoem from "./pages/CreatePoem";
 import MainPage from "./Mainpage";
 import PoemPage from "./pages/PoemPage";
+import PoemType from "./pages/PoemType";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path= {"/home"} element = {<Layout />}/>
           <Route path = {"/profile"} index element= {<HomePage /> } /> 
           <Route path= {'/login'} element= {<LoginPage />} />
+          <Route path= {'/poemtype'} element = {<PoemType />} />
           <Route path = {'/register'} element = { <Register />} />
           <Route path = {'/poem'} element = {<CreatePoem />} />
           <Route path ='/poem/:id' element = {<PoemPage/>} >
