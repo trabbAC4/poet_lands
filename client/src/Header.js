@@ -35,7 +35,7 @@ export default function Header() {
         <nav>
           {username && (
             <>
-              <Link to= "/"> Welcome {username}! </Link>
+              <Link to= "/profile"> Welcome {username}! </Link>
               <Link to ="/poem"> Create new poem </Link>
               <Link to ="/"> <a onClick = {logout}> Logout </a> </Link>
             </>

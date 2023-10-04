@@ -6,7 +6,6 @@ import MainPage from "./Mainpage"
 export default function Layout() {
     return(
         <main>
-            <MainPage />
             <Outlet />
 
         </main>

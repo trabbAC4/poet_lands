@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage"
 import Register from "./pages/Register"
 import {UserContextProvider} from "./UserContext";
 import CreatePoem from "./pages/CreatePoem";
+import MainPage from "./Mainpage";
 import PoemPage from "./pages/PoemPage";
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
     <UserContextProvider> 
       <Header />
       <Routes>
-          <Route path= {"/"} element = {<Layout />}/>
-          <Route index element= {<HomePage /> } /> 
+          <Route path = {"/"} element = {<MainPage />} />
+          <Route path= {"/home"} element = {<Layout />}/>
+          <Route path = {"/profile"} index element= {<HomePage /> } /> 
           <Route path= {'/login'} element= {<LoginPage />} />
           <Route path = {'/register'} element = { <Register />} />
           <Route path = {'/poem'} element = {<CreatePoem />} />
