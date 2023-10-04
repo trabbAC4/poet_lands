@@ -30,15 +30,16 @@ export default function Header() {
 
     return(
       <> 
-        <header> 
-        <Link to= "/" className="logo">Poet Lands</Link>
-        <nav>
+        <header class = "bg-white border-gray-200 dark:bg-gray-900">
+        <Link to= "/" className="logo">📝 Poet Lands</Link>
+        <nav class =  "bg-white border-gray-200 dark:bg-gray-900">
           {username && (
             <>
               <Link to = "/poemtype"> Need help? </Link> 
               <Link to= "/profile"> Welcome {username}! </Link>
               <Link to ="/poem"> Create new poem </Link>
               <Link to ="/"> <a onClick = {logout}> Logout </a> </Link>
+
             </>
           )}
           {!username && (
