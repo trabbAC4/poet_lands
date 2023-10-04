@@ -62,7 +62,7 @@ input {
 }
 
 
-button {
+/* button {
   width: 50%;
   background-color: blue;
   border: 0;
@@ -74,7 +74,7 @@ button {
   margin-left: 350px;
 
 
-}
+} */
 form.login h1, form.register h1 {
   text-align: center;
 }

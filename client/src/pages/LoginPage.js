@@ -30,21 +30,29 @@ export default function LoginPage() {
         return <Navigate to ={'/profile'} />
     }
     return (
-        <div>
-            <form className= "Login" onSubmit={login}>
-                <h1 id = "login"> Login </h1> 
+        <div class="container mx-auto h-full flex flex-1 justify-center items-center">
+            <div class="w-full max-w-lg">
+             <div class="leading-loose"></div>
+
+            <form class = "max-w-sm m-10 p-10 bg-black bg-opacity-25 rounded shadow-xl" onSubmit={login}>
+                <h1 class="text-white font-medium text-center text-lg font-bold"> LOGIN </h1> 
+                <label class="block text-sm text-white" for="email">Username</label>
                 <input type= "text"
                      placeholder= "username"
                      value = {username} 
+                     class = "w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white" placeholder="username" required=""
                      onChange = {ev => setUsername(ev.target.value)}
                 />
+                <label class="block text-sm text-white" for="password">Password</label>
                 <input type='password' 
                     placeholder="password" 
                     value = {password}
+                    class = "w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white" placeholder = "......." required=""
                     onChange = {ev => setPassword(ev.target.value)}
                 />
-                <button> Login </button>
+            <button class = "px-20 py-5 text-white font-light tracking-wider bg-gray-900 hover:bg-blue-800 rounded"> Login </button>
             </form>
+        </div>
         </div>
     )
 }
