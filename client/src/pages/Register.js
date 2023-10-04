@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Navigate} from "react-router-dom";
 
 
 
@@ -14,6 +15,7 @@ export default function Register() {
         });
         if (response.status === 200) {
             alert('register successful');
+            return <Navigate to = {'/profile'} />
         }
         else {
             alert('registration failed')
