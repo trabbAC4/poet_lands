@@ -8,9 +8,7 @@ export default function PoemPage() {
     const divRef = useRef(null);
     const generatePDF = () => {
         const divToCapture = divRef.current;
-
         if (!divToCapture) return;
-
         html2canvas(divToCapture).then((canvas) => {
             const imgData = canvas.toDataURL('image/png');
             const pdf = new jsPDF();
