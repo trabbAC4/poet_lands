@@ -7,7 +7,7 @@ MERN stack application using JWS, CORS, Mongoose, middleware, jspdf
   <li> There are options for the user to use different font sizes, fonts with the text editor </li>
   <li> There is an option for the user to download their finalized poems </li>
   <li> There is a reference page that details different types of poems for users to look at </li>
-  
+</ul>
 <h1> Requisites </h1>
 <ul>
   <li> NPM </li>
