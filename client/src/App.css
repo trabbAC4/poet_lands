@@ -62,7 +62,7 @@ input {
 }
 
 
-/* button {
+.Get_started {
   width: 50%;
   background-color: blue;
   border: 0;
@@ -74,7 +74,8 @@ input {
   margin-left: 350px;
 
 
-} */
+} 
+/* React Quill form */
 form.login h1, form.register h1 {
   text-align: center;
 }
@@ -137,6 +138,18 @@ a {
 
 }
 
+.ql-container {
+    height: auto !important;
+  }
+
+.ql-editor {
+    height: 300px !important;
+    background-color: black;
+    color: white;
+}
+#button {
+  margin-left: 375px;
+}
 .poem { 
   margin: 45px;
   width: 250px;

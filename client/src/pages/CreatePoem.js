@@ -44,7 +44,7 @@ export default function CreatePoem() {
         }
     }
     if (redirect) {
-        return <Navigate to={'/'} />
+        return <Navigate to={'/profile'} />
     }
 
     return( 
@@ -63,7 +63,9 @@ export default function CreatePoem() {
                     modules = {modules} 
                     formats = {formats}
                 />
-                <button style= {{marginTop: '5px'}}> Create Poem </button>
+                <div id = "button"> 
+                <button class = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" required > Create Poem ✍️  </button>
+                </div>
             </form>
         </div>
         </main>

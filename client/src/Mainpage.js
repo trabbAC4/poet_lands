@@ -8,7 +8,7 @@ export default function Mainpage() {
             <h1> Welcome to Poet Lands</h1>
             <h1> An environment where you can create, and download your poetry </h1>
             </div>
-            <Link to = "/register"> <button type="button" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."> Get Started </button> </Link>
+            <Link to = "/register"> <button class= "Get_started" > Get Started </button> </Link>
             <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
   <div class="-m-1 flex flex-wrap md:-m-2">
     <div class="flex w-1/3 flex-wrap">
