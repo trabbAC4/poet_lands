@@ -11,6 +11,7 @@ import CreatePoem from "./pages/CreatePoem";
 import MainPage from "./Mainpage";
 import PoemPage from "./pages/PoemPage";
 import PoemType from "./pages/PoemType";
+import InitialHeader from "./pages/InitialHeader"
 
 function App() {
   return (

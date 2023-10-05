@@ -24,6 +24,7 @@ mongoose.connect('mongodb+srv://user1:y2CI8pkYB3ziK4cb@cluster0.2rkjome.mongodb.
 
 app.post('/register', async (req,res) =>  {
     const {username, password} = req.body;
+    console.log(username, password);
     try{
         const userDoc = await User.create({
             username,  
@@ -63,6 +64,8 @@ app.get('/profile', (req,res) => {
 
 app.post('/logout', (req,res)=> {
     res.cookie('token', '').json('ok');
+
+
 })
   
 
@@ -81,7 +84,8 @@ app.post('/poem', upload.none(), async(req,res) => {
 }); 
 
 app.get('/poem',async(req,res) => {
-    res.json(await Poem.find().populate('author', ['username']))
+    res.json(await Poem.find().populate('author', ['username']));
+
 })
 
 app.get('/poem/:id', async(req, res)=> {

@@ -6,6 +6,7 @@ import {Navigate} from "react-router-dom";
 export default function Register() {
     const [username, setUsername] = useState(' ');
     const [password, setPassword] = useState(' ');
+    const [redirect, setRedirect] = useState(false);
     async function register(ev) { 
         ev.preventDefault(); 
         const response = await fetch('http://localhost:4000/register', {
@@ -14,12 +15,15 @@ export default function Register() {
             headers: {'Content-Type': 'application/json'}
         });
         if (response.status === 200) {
-            alert('register successful');
-            return <Navigate to = {'/profile'} />
+            alert('register successful. Login now!');
+            setRedirect(true);
         }
         else {
             alert('registration failed')
         }
+    }
+    if (redirect) {
+        return <Navigate to={'/login'} />
     }
     return (
         <div class="container mx-auto h-full flex flex-1 justify-center items-center">
