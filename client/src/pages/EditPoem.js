@@ -1,18 +1,37 @@
-import {useState} from "react";
-import {Navigate} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {Navigate, useParams} from "react-router-dom";
 import ReactQuill from "react-quill";
 
 export default function EditPoem() {
+    const {id} = useParams();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState({ops: []}); 
     const [redirect, setRedirect] = useState(false);
 
-    function updatePoem(ev) {
-        ev.preventDefault(); 
-    }
+    useEffect(() => {
+        fetch('http://localhost:4000/poem/'+id).then(response =>{
+            response.json().then(poemInfo => {
+                setTitle(poemInfo.title);
+                setContent(poemInfo.content);
+            });
+        });
+    }, []);
+    async function updatePoem(ev) {
+        ev.preventDefault();
+        const data = new FormData();
+        data.set('title', title);
+        data.set('content', content);
+        data.set('id', id);
+        await fetch('http://localhost:4000/poem', {
+            method: 'PUT',
+            body: data, 
+            credentials: "include"
+        });
+        setRedirect(true);
+    } 
 
     if (redirect) {
-        return <Navigate to = {'/'} /> 
+        return <Navigate to = {'/poem/' + id} /> 
 
     }
 
@@ -47,7 +66,7 @@ export default function EditPoem() {
                     formats = {formats}
                 />
                 <div id = "button"> 
-                <button class = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" required > Create Poem ✍️  </button>
+                <button class = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" required > Update Poem ✍️  </button>
                 </div>
             </form>
         </div>

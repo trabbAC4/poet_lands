@@ -25,9 +25,9 @@ export default function CreatePoem() {
     const [redirect, setRedirect] = useState(false);
 
     async function createNewPoem(ev) {
-        // const data = new FormData();
-        // data.set('title', title)
-        // data.set('content', content);
+        const data = new FormData();
+        data.set('title', title)
+        data.set('content', content);
         // console.log(data);
         // console.log(title);
         // console.log(content);

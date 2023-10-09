@@ -90,6 +90,30 @@ app.post('/poem', upload.none(), async(req,res) => {
     });  
 }); 
 
+app.put('/poem', async(req, res) => {
+    const {token} = req.cookies;
+    jwt.verify(token, jwt_secret, {}, async(err,info) => {
+        if (err) throw err;
+        const {id, title, content} = req.body;
+        console.log(id, title, content);
+        const poemDoc = await Poem.findById(id);
+        const isAuthor = JSON.stringify(poemDoc) === JSON.stringify(info.id);
+        if (!isAuthor) {
+            return res.status(400).json('You are not the author');
+            throw 'you are not the author';
+        }
+        await poemDoc.update({title, content});
+    res.json(poemDoc);
+    })
+});
+
+//Endpoint for deleting poems 
+
+app.post('/poem', async(req, res) => {
+    const {token} = req.cookies;
+    
+})
+
 app.get('/poem',async(req,res) => {
     res.json(await Poem.find().populate('author', ['username']));
 
