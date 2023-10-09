@@ -12,6 +12,7 @@ import MainPage from "./Mainpage";
 import PoemPage from "./pages/PoemPage";
 import PoemType from "./pages/PoemType";
 import InitialHeader from "./pages/InitialHeader"
+import EditPoem from "./pages/EditPoem"
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
           <Route path= {'/poemtype'} element = {<PoemType />} />
           <Route path = {'/register'} element = { <Register />} />
           <Route path = {'/poem'} element = {<CreatePoem />} />
-          <Route path ='/poem/:id' element = {<PoemPage/>} >
+          <Route path ='/poem/:id' element = {<PoemPage/>} />
+          <Route path = '/edit/:id' element = {<EditPoem />} >
           </Route> 
       </Routes>
     </UserContextProvider>

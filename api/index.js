@@ -19,6 +19,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
+let current_user = '';
+
 mongoose.connect('mongodb+srv://user1:y2CI8pkYB3ziK4cb@cluster0.2rkjome.mongodb.net/?retryWrites=true&w=majority');
 
 
@@ -31,6 +33,7 @@ app.post('/register', async (req,res) =>  {
             password: bcrypt.hashSync(password, salt),});
         res.json(userDoc); 
     } catch(e) {
+        alert("Incorrect password!")
         res.status(400).json(e);
     }
 });
@@ -59,6 +62,9 @@ app.get('/profile', (req,res) => {
     jwt.verify(token, jwt_secret, {}, (err, info) => {
         if (err) throw err;
         res.json(info);
+        current_user  = info.username;
+        console.log(current_user);
+
     });
 });
 
@@ -80,6 +86,7 @@ app.post('/poem', upload.none(), async(req,res) => {
             author: info.id, 
         });
         res.json(poemDoc);
+        console.log(poemDoc);
     });  
 }); 
 
@@ -90,7 +97,7 @@ app.get('/poem',async(req,res) => {
 
 app.get('/poem/:id', async(req, res)=> {
     const {id} = req.params;
-    const poemDoc = await Poem.findById(id).populate('author', ['username']);
+    const poemDoc = await Poem.findById(id).populate('author', [current_user]);
     res.json(poemDoc);
 })
 app.listen(4000);

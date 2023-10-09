@@ -206,3 +206,10 @@ a {
   letter-spacing: 1px;
   word-spacing: 3px;
 }
+#edit_button {
+  float:left;
+}
+
+#download_button {
+  float:right;
+}

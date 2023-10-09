@@ -2,6 +2,7 @@ import { useState, useEffect, useRef} from "react";
 import { useParams } from "react-router";
 import html2canvas from 'html2canvas';
 import jsPDF from "jspdf";
+import {Link} from 'react-router-dom';
 
 
 export default function PoemPage() {
@@ -44,7 +45,12 @@ export default function PoemPage() {
                     </div>
                 </div>
             </div>
-            <button onClick = {generatePDF}> Download! </button>
+            <div id = "space-between-choices"> 
+            <Link className= "edit-btn" to= {`/edit/${poemInfo._id}`}>
+                <button id= "edit_button"> Edit your poem  </button> 
+            </Link>
+                <button id = "download_button" onClick = {generatePDF}> Download! </button>
+            </div>
         </div>
 
     );
