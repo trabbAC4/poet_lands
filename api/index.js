@@ -108,11 +108,23 @@ app.put('/poem', async(req, res) => {
 });
 
 //Endpoint for deleting poems 
+// app.post('/deletepoem', async(req, res) => ) {
 
-app.post('/poem', async(req, res) => {
-    const {token} = req.cookies;
-    
-})
+// }
+// app.post('/deletepoem', async(req, res) =>  {
+//     const {poem_id} = req.body;
+//     try {
+//         User.deleteOne(
+//             {_id: poemDoc.id}, function(err, res) {
+//                 console.log(err);
+//             });
+//             res.send({status: 'ok', data: 'deleted'});
+
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
+
 
 app.get('/poem',async(req,res) => {
     res.json(await Poem.find().populate('author', ['username']));

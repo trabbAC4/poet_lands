@@ -4,6 +4,15 @@ import {Link} from "react-router-dom";
 
 
 export default function Poem({_id, title, createdAt, author}) {
+  // const delete_user = (id) => {
+  //   if (window.confirm("Are you sure you want to delete this?")) {
+  //     alert("poem is deleted");
+  //   }
+  //   else {
+  //     console.log("Deleted");
+  //   }
+  // }
+
     return(
       <div className = "display"> 
         <div className="poem">
@@ -13,8 +22,8 @@ export default function Poem({_id, title, createdAt, author}) {
          </Link>
           <h1 id = "author"> {author.username} </h1>
           <time> Created: {formatISO9075(new Date(createdAt))} </time>
-
-          <button id = "delete">  Delete </button>
+          
+          {/* <h1 id = "delete" onClick={delete_user}> 🗑️  </h1> */}
 
          </div>
       </div>
