@@ -16,3 +16,6 @@ MERN stack application using JWS, CORS, Mongoose, middleware, jspdf
   <li> MongoDB </li>
 </ul>
 <h1> Video Showcase </h1>
+https://github.com/trabbAC4/poet_lands/assets/30081828/dcd32ef1-c748-4f84-a77e-6344c737d5d8
+
+
